@@ -26,7 +26,7 @@ export const App = () => {
     return (
         <BucketProvider>
             <ProductsProvider>
-                <ButtonGroup title={`Для просмотра меню нажми Каталог`} isReplyButtons maxColumns={2} isResizedKeyboard>
+                <ButtonGroup title="Для просмотра меню нажми Каталог" isReplyButtons maxColumns={2} isResizedKeyboard>
                     <Button>Корзина</Button>
                     <Button>Каталог</Button>
                     <Button>Оформить</Button>
