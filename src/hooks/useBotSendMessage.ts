@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { UrbanMessageButtonsData, useBotContext } from '@urban-bot/core';
 
 export const useBotSendMessage = () => {
-    const { bot } = useBotContext();
+    const { bot, chat } = useBotContext();
 
     const sendMessage = useCallback(
         async (userId: string, text: string) => {
@@ -26,5 +26,5 @@ export const useBotSendMessage = () => {
         [bot],
     );
 
-    return { bot, sendMessage, buttonMessage };
+    return { bot, sendMessage, buttonMessage, chat };
 };

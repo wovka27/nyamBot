@@ -1,26 +1,9 @@
-import React, { useCallback, useEffect } from 'react';
-import { useBotContext, useRouter, useText } from '@urban-bot/core';
-import { useBucket, useProducts } from '../store';
+import React from 'react';
 import { ProductList } from '../Components';
-import { commandHOF } from '../utils';
-import { RoutesEnum } from '../types/routes';
-import { UserType } from '../types/store';
+import { useCatalog } from '../hooks';
 
 export const Catalog: React.FC = () => {
-    const { products, fetchProducts } = useProducts();
-    const { addProduct } = useBucket();
-    const { navigate} = useRouter();
-    const command = useCallback(commandHOF, [commandHOF]);
-
-    const showProduct = command((index) => {
-        navigate(RoutesEnum.PRODUCT, { product: products[index] });
-    });
-
-    const addProductToBasket = command((index) => addProduct(products[index]));
-
-    useEffect(() => {
-        fetchProducts();
-    }, []);
+    const { products, showProduct, addProductToBasket } = useCatalog();
 
     if (products.length === 0) {
         return null;

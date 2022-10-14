@@ -3,7 +3,7 @@ import { UrbanBotTelegram } from '@urban-bot/telegram';
 import { render, Root } from '@urban-bot/core';
 import dotenv from 'dotenv';
 import { App } from '../App';
-import { BucketProvider } from '../store';
+import { CommonBasketProvider } from '../store';
 
 dotenv.config();
 
@@ -21,10 +21,10 @@ const urbanBotTelegram = new UrbanBotTelegram({
 });
 
 render(
-    <BucketProvider>
-        <Root bot={urbanBotTelegram} port={PORT ? Number(PORT) : undefined} sessionTimeSeconds={36000}>
+    <CommonBasketProvider>
+        <Root bot={urbanBotTelegram} port={PORT ? Number(PORT) : undefined} sessionTimeSeconds={3600}>
             <App />
         </Root>
-    </BucketProvider>,
+    </CommonBasketProvider>,
     () => console.log('telegram started'),
 );

@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useCallback, useState } from 'react';
-import { getProducts } from '../api';
 import { ProductType } from '../types/store';
+import { fetchProductCallback } from '../utils';
 
 export enum StatusEnum {
     LOADING = 'Загрузка',
@@ -23,21 +23,7 @@ export function ProductsProvider({ children }: ProductsProviderProps) {
     const [products, setProducts] = React.useState<ProductType[]>([]);
     const [status, setStatus] = useState<StatusEnum>();
 
-    const fetchProducts = useCallback(async () => {
-        if (products.length > 0) {
-            return;
-        }
-        setStatus(StatusEnum.LOADING);
-        try {
-            const response = await getProducts();
-            if (response) {
-                setProducts(response.data.data.products);
-            }
-            setStatus(StatusEnum.SUCCESS);
-        } catch (err) {
-            setStatus(StatusEnum.ERROR);
-        }
-    }, [products.length]);
+    const fetchProducts = useCallback(() => fetchProductCallback(products, setStatus, setProducts), [products.length]);
 
     return <ProductsContext.Provider value={{ products, fetchProducts, status }}>{children}</ProductsContext.Provider>;
 }
