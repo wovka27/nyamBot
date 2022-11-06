@@ -23,7 +23,7 @@ export const useBasket = () => {
 
     useEffect(() => {
         if (products.length !== 0) {
-            sendMessage(chat.id, 'Записать(перезаписать) список в общую корзину? /ok');
+            sendMessage(chat.id, 'Отправить в общую корзину? /ok');
         }
     }, [products.length]);
 
