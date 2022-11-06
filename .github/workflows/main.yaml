@@ -24,4 +24,4 @@ jobs:
       - name: touch index.html
         run: echo "<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Telegram-Bot</title></head><body><p>Start Telegram-Bot</p><script src="index.js"></script></body></html>" >> dist/index.html
       - name: start
-        run: npm run dev
+        run: npm run start

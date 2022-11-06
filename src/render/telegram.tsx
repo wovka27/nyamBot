@@ -16,7 +16,7 @@ if (!TELEGRAM_TOKEN) {
 }
 
 const urbanBotTelegram = new UrbanBotTelegram({
-    token: TELEGRAM_TOKEN,
+    token: '5649960131:AAGKpv8E5y2KMdrOfXSG8OCU14gS7J_eUpo',
     isPolling: isDevelopment,
 });
 
