@@ -1,5 +1,3 @@
-import { UserType } from './user';
-
 export interface BasketItemType {
     count?: number;
     price?: number;

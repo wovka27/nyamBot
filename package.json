@@ -1,7 +1,7 @@
 {
-    "name": "@urban-bot/starter-typescript",
-    "version": "0.3.8",
-    "description": "Start write chatbots with urban-bot and typescript",
+    "name": "NyamBot",
+    "version": "0.1.0",
+    "description": "Start NyamBot",
     "license": "MIT",
     "main": "dist/index.js",
     "files": [
