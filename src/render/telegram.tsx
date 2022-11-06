@@ -9,18 +9,14 @@ dotenv.config();
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 
-if (!process.env.TELEGRAM_TOKEN) {
-    throw new Error('Provide TELEGRAM_TOKEN to .env https://core.telegram.org/bots#6-botfather');
-}
-
 const urbanBotTelegram = new UrbanBotTelegram({
-    token: process.env.TELEGRAM_TOKEN,
+    token: '5649960131:AAGKpv8E5y2KMdrOfXSG8OCU14gS7J_eUpo',
     isPolling: isDevelopment,
 });
 
 render(
     <CommonBasketProvider>
-        <Root bot={urbanBotTelegram} port={process.env.PORT ? Number(process.env.PORT) : 8080} sessionTimeSeconds={3600}>
+        <Root bot={urbanBotTelegram} port={5000} sessionTimeSeconds={3600}>
             <App />
         </Root>
     </CommonBasketProvider>,
