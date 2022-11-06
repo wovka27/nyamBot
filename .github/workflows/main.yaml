@@ -23,3 +23,5 @@ jobs:
         run: npm run build
       - name: start
         run: npm run start
+      - name: start-tunnel
+        run: ngrok http 8080
