@@ -18,7 +18,7 @@ export const App = () => {
             text !== RoutesEnum.PRODUCT
         ) {
             if (from.id != null) {
-                await sendMessage(from.id, `${from.firstName}, я вас не понимать...`);
+                await sendMessage(from.id, `${from.firstName}, я вас не понимаю...`);
             }
         }
     });
